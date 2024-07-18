@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aule86 <aule86@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:24:27 by aule86            #+#    #+#             */
-/*   Updated: 2024/07/10 13:43:02 by aule86           ###   ########.fr       */
+/*   Updated: 2024/07/18 13:50:44 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,25 @@ void	process_command(t_shell *shell)
 int	main(int argc, char **argv, char **envp)
 {
 	t_shell	shell;
+	char *input;
+
+	input = NULL;
 
 	(void)argc;
 	(void)argv;
 	setup_shell(&shell, envp);
 	while (1)
 	{
-		read_command(&shell);
+		input = readline("minishell>");
+		if(input == NULL);
+			break ;
+		//check si tiene espacios  o si porlomenos tenga mas de 1 charater
+		if(check_spaces(input) == -1 || input[0] == '\0')
+		{
+			free(input);
+			continue ;
+		}
+		//read_command(&shell);
 		process_command(&shell);
 	}
 	cleanup_shell(&shell);

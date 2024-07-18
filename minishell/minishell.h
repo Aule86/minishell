@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aule86 <aule86@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:00:20 by aule86            #+#    #+#             */
-/*   Updated: 2024/07/10 13:41:33 by aule86           ###   ########.fr       */
+/*   Updated: 2024/07/17 13:24:12 by cyra             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@
 
 typedef struct s_shell
 {
-	char	buffer[BUFFER_SIZE];
-	char	**argv;
-	char	**envp;
-	char	**env_copy;
+	char	buffer[BUFFER_SIZE]; //
+	char	**argv; // copia de los argumentos
+	char	**envp; // variables de entorno
+	char	**env_copy;// copia variables de entorno
 }			t_shell;
 
 void	init_shell(t_shell *shell, char **envp);
