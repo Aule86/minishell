@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyra <cyra@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aule86 <aule86@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:00:20 by aule86            #+#    #+#             */
-/*   Updated: 2024/07/17 13:24:12 by cyra             ###   ########.fr       */
+/*   Updated: 2024/07/19 11:29:35 by aule86           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <dirent.h>
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <stdbool.h>
@@ -40,8 +43,13 @@ void	init_shell(t_shell *shell, char **envp);
 void	read_command(t_shell *shell);
 char	**parse_command(char *buffer);
 void	execute_command(t_shell *shell);
-void	handle_signal(int signal);
 void	setup_shell(t_shell *shell, char **envp);
 void	env_command(t_shell *shell);
+int		check_spaces(char *c);
+void	cleanup_shell(t_shell *shell);
+void	process_command(t_shell *shell);
+char	**ft_env_strdup(char **envp);
+//señales
+void	wait_signal(int signal);
 
 #endif

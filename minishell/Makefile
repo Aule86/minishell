@@ -1,44 +1,12 @@
-# NAME = minishell
-# CC = gcc
-# FLAGS = -Wall -Wextra -Werror
-# LIBFT_DIR = libft/
-# LIBFT = $(LIBFT_DIR)libft.a
-
-# SRC = 	minishell.c \
-# 		execute_command.c \
-# 		parse_command.c \
-# 		read_command.c \
-# 		init_shell.c \
-# 		env_command.c \
-
-
-
-# .SILENT:
-
-
-# $(NAME):
-# 	echo "Compilando..."
-# 	make -C $(LIBFT_DIR) all clean
-# 	$(CC) $(FLAGS) $(SRC) $(LIBFT) -Iincludes -o $(NAME)
-
-# all: $(NAME)
-
-
-# clean:
-# 	@rm -rf *.o
-# 	make -C $(LIBFT_DIR) fclean
-
-# fclean: clean
-# 	@rm -rf ${NAME}
-
-# re: fclean all
-
-# .PHONY : all clean fclean re
 NAME = minishell
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = libft/
 LIBFT = $(LIBFT_DIR)libft.a
+# READLINE #
+LDFLAGS = -lreadline -L/Users/$(USER)/.brew/opt/readline/lib
+READLINE = -I/Users/$(USER)/.brew/opt/readline/include
+#LINUX_READLINE = -lreadline -L/usr/lib/x86_64-linux-gnu/
 
 SRC = 	minishell.c \
 		execute_command.c \
@@ -46,6 +14,9 @@ SRC = 	minishell.c \
 		read_command.c \
 		init_shell.c \
 		env_command.c \
+		process_command.c \
+		signal.c \
+		ft_envp.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -53,7 +24,7 @@ OBJ = $(SRC:.c=.o)
 
 $(NAME): $(OBJ) $(LIBFT)
 	echo "Compilando..."
-	$(CC) $(FLAGS) $(OBJ) $(LIBFT) -Iincludes -o $(NAME)
+	$(CC) $(FLAGS) $(LDFLAGS) $(READLINE) $(OBJ) $(LIBFT) -Iincludes -o $(NAME)
 
 $(LIBFT):
 	make -C $(LIBFT_DIR) all

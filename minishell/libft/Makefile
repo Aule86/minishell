@@ -6,11 +6,6 @@ SRCS	=	ft_memset.c \
 			ft_memmove.c \
 			ft_memchr.c \
 			ft_memcmp.c \
-$(OBJS): $(SRCS)
-	$(CC) -c $(CFLAGS) $(SRCS)
-
-all:	$(NAME)
-
 			ft_strlen.c \
 			ft_strlcpy.c \
 			ft_strchr.c \
