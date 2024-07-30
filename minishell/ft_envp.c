@@ -6,11 +6,13 @@
 /*   By: aule86 <aule86@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 11:02:06 by aule86            #+#    #+#             */
-/*   Updated: 2024/07/19 11:22:36 by aule86           ###   ########.fr       */
+/*   Updated: 2024/07/19 20:45:33 by aule86           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+//copia el envp todas las variables menos la de oldpwd
 
 char	**ft_env_copy(char **envp)
 {
@@ -18,7 +20,7 @@ char	**ft_env_copy(char **envp)
 	int		i;
 
 	i = 0;
-	envp_copy = (char **)malloc(sizeof(char *) * (ft_newstrlen(envp) + 1));
+	envp_copy = (char **)malloc(sizeof(char *) * (ft_strlen(envp) + 1));
 	if (!envp_copy)
 		return (NULL);
 	i = 0;
@@ -34,6 +36,8 @@ char	**ft_env_copy(char **envp)
 	return (envp_copy);
 }
 
+//busca el oldpwd y lo guarda en una variable
+// de no ser asi llama a la funcion de copiar el env
 char	**ft_env_strdup(char **envp)
 {
 	char	**envp_c;
@@ -44,7 +48,7 @@ char	**ft_env_strdup(char **envp)
 	{
 		if (!ft_strncmp(envp[i], "OLDPWD=", 7))
 		{
-			envp_c = (char **)malloc(sizeof(char *) * (ft_newstrlen(envp) + 1));
+			envp_c = (char **)malloc(sizeof(char *) * (ft_strlen(envp) + 1));
 			if (!envp_c)
 				return (NULL);
 			i = 0;

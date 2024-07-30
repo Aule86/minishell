@@ -6,7 +6,7 @@
 /*   By: aule86 <aule86@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 10:44:07 by aule86            #+#    #+#             */
-/*   Updated: 2024/07/19 10:55:54 by aule86           ###   ########.fr       */
+/*   Updated: 2024/07/19 20:46:49 by aule86           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 
 extern int	g_error;
 
-/* void	handle_signal(int signal)
-{
-	if (signal == SIGINT)
-		write(STDOUT_FILENO, "\nminishell> ", 12);
-}
-*/
-
+// funcion que maneja la señal
 static void	handle_signal(int signal)
 {
 	if (signal == SIGINT)
@@ -38,6 +32,7 @@ static void	handle_signal(int signal)
 	}
 	return ;
 }
+// funcion que maneja la señal
 
 static void	child_handler(int signal)
 {
@@ -51,6 +46,7 @@ static void	child_handler(int signal)
 	return ;
 }
 
+// funcion que espera la señal
 void	wait_signal(int i)
 {
 	struct sigaction	sa;
