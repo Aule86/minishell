@@ -6,7 +6,7 @@
 /*   By: aule86 <aule86@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 11:02:06 by aule86            #+#    #+#             */
-/*   Updated: 2024/07/19 20:45:33 by aule86           ###   ########.fr       */
+/*   Updated: 2024/08/01 12:14:06 by aule86           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	**ft_env_copy(char **envp)
 	int		i;
 
 	i = 0;
-	envp_copy = (char **)malloc(sizeof(char *) * (ft_strlen(envp) + 1));
+	envp_copy = (char **)malloc(sizeof(char *) * (ft_newstrlen(envp) + 1));
 	if (!envp_copy)
 		return (NULL);
 	i = 0;
@@ -48,7 +48,7 @@ char	**ft_env_strdup(char **envp)
 	{
 		if (!ft_strncmp(envp[i], "OLDPWD=", 7))
 		{
-			envp_c = (char **)malloc(sizeof(char *) * (ft_strlen(envp) + 1));
+			envp_c = (char **)malloc(sizeof(char *) * (ft_newstrlen(envp) + 1));
 			if (!envp_c)
 				return (NULL);
 			i = 0;
@@ -61,6 +61,6 @@ char	**ft_env_strdup(char **envp)
 			return (envp_c);
 		}
 	}
-	envp_c = ft_envp_copy(envp);
+	envp_c = ft_env_copy(envp);
 	return (envp_c);
 }

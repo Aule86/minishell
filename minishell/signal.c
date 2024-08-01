@@ -6,13 +6,13 @@
 /*   By: aule86 <aule86@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 10:44:07 by aule86            #+#    #+#             */
-/*   Updated: 2024/07/19 20:46:49 by aule86           ###   ########.fr       */
+/*   Updated: 2024/08/01 12:01:01 by aule86           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-extern int	g_error;
+/* extern int	g_error;
 
 // funcion que maneja la señal
 static void	handle_signal(int signal)
@@ -60,3 +60,4 @@ void	wait_signal(int i)
 	sigaction(SIGQUIT, &sa, NULL);
 	sigaction(SIGTERM, &sa, NULL);
 }
+ */

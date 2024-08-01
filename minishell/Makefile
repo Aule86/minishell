@@ -4,8 +4,9 @@ FLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = libft/
 LIBFT = $(LIBFT_DIR)libft.a
 # READLINE #
-LDFLAGS = -lreadline -L/Users/$(USER)/.brew/opt/readline/lib
-READLINE = -I/Users/$(USER)/.brew/opt/readline/include
+READLINE_PREFIX = /usr/local/opt/readline
+LDFLAGS = -lreadline -L$(READLINE_PREFIX)/lib
+READLINE = -I$(READLINE_PREFIX)/include
 #LINUX_READLINE = -lreadline -L/usr/lib/x86_64-linux-gnu/
 
 SRC = 	minishell.c \

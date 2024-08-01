@@ -34,6 +34,7 @@ SRCS	=	ft_memset.c \
 			ft_strtrim.c \
 			ft_itoa.c \
 			ft_split.c \
+			ft_newstrlen.c \
 
 OBJS    = $(SRCS:.c=.o)
 

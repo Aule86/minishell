@@ -6,7 +6,7 @@
 /*   By: aule86 <aule86@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:00:20 by aule86            #+#    #+#             */
-/*   Updated: 2024/07/19 11:29:35 by aule86           ###   ########.fr       */
+/*   Updated: 2024/08/01 12:00:31 by aule86           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ void	cleanup_shell(t_shell *shell);
 void	process_command(t_shell *shell);
 char	**ft_env_strdup(char **envp);
 //señales
-void	wait_signal(int signal);
+//void	wait_signal(int signal);
 
 #endif
