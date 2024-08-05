@@ -6,7 +6,7 @@
 /*   By: aule86 <aule86@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:00:20 by aule86            #+#    #+#             */
-/*   Updated: 2024/08/01 12:00:31 by aule86           ###   ########.fr       */
+/*   Updated: 2024/08/04 18:10:43 by aule86           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	init_shell(t_shell *shell, char **envp);
 void	read_command(t_shell *shell);
 char	**parse_command(char *buffer);
 void	execute_command(t_shell *shell);
+void	recive_args(t_shell *shell);
 void	setup_shell(t_shell *shell, char **envp);
 void	env_command(t_shell *shell);
 int		check_spaces(char *c);
