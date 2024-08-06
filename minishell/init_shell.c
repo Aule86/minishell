@@ -6,7 +6,7 @@
 /*   By: aule86 <aule86@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 13:32:40 by aule86            #+#    #+#             */
-/*   Updated: 2024/08/04 18:31:43 by aule86           ###   ########.fr       */
+/*   Updated: 2024/08/06 12:43:02 by aule86           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	init_shell(t_shell *shell, char **envp)
 {
 	int	env_count;
 
+	//shell->envp = ft_env_strdup(envp);
 	env_count = count_env(envp);
 	shell->env_copy = malloc(sizeof(char *) * (env_count + 1));
 	if (!shell->env_copy)

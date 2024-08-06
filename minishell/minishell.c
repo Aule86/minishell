@@ -6,7 +6,7 @@
 /*   By: aule86 <aule86@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 12:24:27 by aule86            #+#    #+#             */
-/*   Updated: 2024/08/04 18:20:40 by aule86           ###   ########.fr       */
+/*   Updated: 2024/08/06 12:14:25 by aule86           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,16 @@ void	recive_args(t_shell *shell)
 		if (check_spaces(input) == -1 || input[0] == '\0')
 		{
 			free(input);
-			printf("");
+			continue ;
 		}
-		//historial
-		add_history(input);
-		read_command(shell);
-		process_command(shell);
-		free(input);
+		else
+		{
+			//historial
+			add_history(input);
+			read_command(shell, input);
+			process_command(shell);
+			free(input);
+		}
 	}
 }
 
